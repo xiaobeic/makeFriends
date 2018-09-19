@@ -1,0 +1,235 @@
+a:hover {
+	text-decoration: none;
+}
+
+
+/*登录注册超链接*/
+
+.login-a {
+	margin: 5px;
+}
+
+.login-a:hover {
+	text-decoration: none;
+}
+
+.forget-a {
+	color: #555;
+	margin-left: 70px;
+}
+
+.forget-a:hover {
+	text-decoration: none;
+	color: #1B9AF7;
+}
+
+
+/*右下角流动框*/
+
+.fixed-btn {
+	position: fixed;
+	right: 1%;
+	bottom: 2%;
+	width: 40px;
+	border: 1px solid #eee;
+	background-color: white;
+	font-size: 25px;
+}
+
+.fixed-btn a {
+	display: inline-block;
+	width: 40px;
+	height: 30px;
+	text-align: center;
+}
+
+
+/*
+ * 贴吧头部
+ */
+
+.bar-headdiv {
+	width: 900px;
+	height: 340px;
+	margin-top: 50px;
+	background: url(../img/bar1.jpg);
+	background-repeat: no-repeat;
+	background-size: 900px 280px;
+	background-color: white;
+}
+
+
+/*
+ * 贴吧头部头像
+ */
+
+.home_imgs {
+	overflow: hidden;
+	width: 260px;
+	height: 150px;
+	margin-left: 10px;
+	margin-top: 110px;
+}
+
+.home_imgs img {
+	padding: 4px;
+	display: block;
+	width: 260px;
+	height: 150px;
+	background: #fff;
+	border: 1px solid #DADCDF;
+	transition: .6s;
+}
+
+.home_imgs:hover img {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+}
+
+.bar-headspan1 {
+	color: white;
+	font-size: 17px;
+	font-weight: 580;
+	font-family: '新宋体';
+}
+
+
+/*
+ * 收藏按钮
+ */
+
+.bar-headdiv2 .head_span1 {
+	cursor: default;
+}
+
+.bar-headdiv2 .head_span2 {
+	color: #D43F3A;
+}
+
+.bar-headdiv2 .head_span3 {
+	color: #5E5E5E;
+}
+
+.post_head{
+	height: 50px;
+	background-color: #357EBD;
+	border-radius: 4px 4px 0 0;
+	background-image: linear-gradient(to bottom, #357EBD, #088EF0);
+}
+
+
+/**
+ *贴吧帖子样式 
+ */
+
+.mypost_div1 {
+	width: 900px;
+	padding: 15px 0 15px 50px;
+}
+
+.mypost_div1:hover {
+	background-color: #E5E5E5;
+}
+
+.mypost_div3 {
+	margin-top: 10px;
+	font-size: 16px;
+	font-weight: 600;
+	width: 800px;
+	height: 40px;
+	color: #000000;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.mypost_div4 {
+	width: 800px;
+	font-size: 15px;
+	font-weight: 500;
+	color: #337ab7;
+	margin-top: 10px;
+	text-align: right;
+	padding-right: 10px;
+}
+
+.mypost_div5 {
+	display: inline-block;
+	width: 800px;
+	margin-top: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.mypost_span1 {
+	font-size: 20px;
+	font-weight: 700;
+	padding-right: 10px;
+	display: block;
+	width: 670px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	float: left;
+}
+
+.mypost_span2 {
+	padding-top: 5px;
+	height: 22px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #666666;
+	text-align: left;
+	display: block;
+	width: 130px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.mypost_span3 {
+	font-size: 15px;
+	font-weight: 500;
+	color: #666666;
+	float: left;
+}
+
+.mypost_imgs {
+	overflow: hidden;
+	width: 155px;
+	height: 155px;
+	float: left;
+	margin-right: 5px;
+}
+
+.mypost_imgs img {
+	width: 150px;
+	height: 150px;
+	transition: .6s;
+	-moz-transition: .6s;
+	-webkit-transition: .6s;
+	-o-transition: .6s;
+	line-height: 1em;
+}
+
+.mypost_imgs:hover img {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+}
+
+.mypost_label {
+	color: white;
+	padding: 0 5px;
+	font-size: 15px;
+	font-weight: 550;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+	border: 1px solid;
+	border-radius: 4px;
+}
+
+.mymessage_hr1 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	width: 900px;
+	border-top: 1px dotted #C0C0C0;
+}

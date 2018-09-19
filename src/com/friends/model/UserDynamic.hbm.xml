@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.friends.model">
+
+	<class name="UserDynamic" table="userdynamic">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="title" type="string"></property>
+		<property name="content" type="text"></property>
+		<property name="time" type="timestamp"></property>
+		<property name="Toped" type="int"></property>
+		<property name="Picked" type="int"></property>
+		<property name="approveCount" type="int"></property>
+		<property name="notApproveCount" type="int"></property>
+		<property name="watchCount" type="int"></property>
+		<many-to-one name="user" class="User" column="user_id"></many-to-one>
+		<many-to-one name="interestGroup" class="InterestGroup" column="interestGroup_id"></many-to-one>
+		<set name="userDynamicPics" table="userDynamic_userDynamicPics">
+			<key column="userDynamic_id"></key>
+			<many-to-many class="UserDynamicPic" column="userDynamicPic_id"></many-to-many>
+		</set>
+		<set name="comments" order-by="replyTime desc" lazy="false" table="comment">
+            <key column="userDynamic_id"></key>
+            <one-to-many class="Comment"></one-to-many>
+        </set>
+	</class>
+
+</hibernate-mapping>
+        

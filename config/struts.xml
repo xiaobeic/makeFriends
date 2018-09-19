@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 配置为开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 配置扩展名为action -->
+	<constant name="struts.action.extension" value="do,action" />
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="user_*" method="{1}" class="com.friends.action.UserAction">
+			<result name="login" type="redirect">/view/index.jsp</result>
+			<result name="getMyCollections">/view/personalCenter.jsp</result>
+			<result name="seeMyGroups">/view/myGroups.jsp</result>
+			<result name="seeMyAccountSetting">/view/accountSetting.jsp</result>
+			<result name="saveUserBasicInfos" type="redirectAction">user_seeMyAccountSetting</result>
+			<result name="saveUserPersonalInfors" type="redirectAction">user_seeMyAccountSetting</result>
+			<result name="changeUserPassword" type="redirectAction">user_seeMyAccountSetting</result>
+		</action>
+
+		<action name="interest_*" method="{1}" class="com.friends.action.InterestAction">
+			<result name="success">/view/tribalHome.jsp</result>
+		</action>
+
+		<action name="interestGroup_*" method="{1}" class="com.friends.action.InterestGroupAction">
+		    <!-- 重置fileUpload拦截器 -->
+		    <interceptor-ref name="fileUpload">
+		          <param name="maximumSize">10485760</param>
+		          <param name="allowedExtensions">jpg,jpeg,gif,png</param>
+		    </interceptor-ref>
+		    <interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/view/interestGroup.jsp</result>
+			<result name="saveCreatedInterestGroup" type="redirectAction">user_seeMyGroups</result>
+			<result name="createInterestGroup">/view/createInterestGroup.jsp</result>
+		</action>
+		
+		<action name="userDynamtic_*" method="{1}" class="com.friends.action.UserDynamticAction">
+			<result name="seeUserDynamtic">/view/postHome.jsp</result>
+			<result name="seeMyDynamtic">/view/myDynamtics.jsp</result>
+			<result name="goInterestGroup" type="redirectAction">
+			    <param name="actionName">interestGroup_seeInterestGroup</param>
+			    <param name="interestGroupId">${interestGroupId}</param>
+			</result>
+		</action>
+
+        <action name="comment_*" method="{1}" class="com.friends.action.CommentAction" >
+            <result name="goUserDynamtic" type="redirectAction">
+                <param name="actionName">userDynamtic_seeUserDynamtic</param>
+                <param name="userDynamticId">${userDynamticId}</param>
+            </result>
+        </action>
+        
+        <action name="replyComment_*" method="{1}" class="com.friends.action.ReplyCommentAction" >
+            <result name="goUserDynamtic" type="redirectAction">
+                <param name="actionName">userDynamtic_seeUserDynamtic</param>
+                <param name="userDynamticId">${userDynamticId}</param>
+            </result>
+        </action>
+
+		<action name="securityCodeImageAction" class="com.friends.action.SecurityCodeImageAction">
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">imageStream</param>
+				<param name="bufferSize">2048</param>
+			</result>
+		</action>
+	</package>
+	<!-- 
+		使用ajax必须添加json-plugin 的jar包
+		struts2-json-plugin-2.3.20.jar
+	 -->
+	<package name="ajax" namespace="/" extends="json-default">
+    	<action name="userAjax_*" class="com.friends.action.UserAjaxAction" method="{1}">
+    		<result name="success" type="json">
+    			<!-- result是action中设置的变量名，也是页面需要返回的数据，该变量必须有setter和getter方法 -->
+    			<param name="root">result</param>
+    			<!-- callbackParameter是ajax回调函数中设置的变量名，也是页面需要返回的数据-->
+    			<param name="callbackParameter">data</param>
+    		</result>
+    	</action>
+    	<action name="interestGroupAjax_*" class="com.friends.action.InterestGroupAjaxAction" method="{1}">
+            <result name="success" type="json">
+                <!-- result是action中设置的变量名，也是页面需要返回的数据，该变量必须有setter和getter方法 -->
+                <param name="root">result</param>
+                <!-- callbackParameter是ajax回调函数中设置的变量名，也是页面需要返回的数据-->
+                <param name="callbackParameter">data</param>
+            </result>
+        </action>
+        <action name="userDynamticAjax_*" class="com.friends.action.UserDynamticAjaxAction" method="{1}">
+            <result name="success" type="json">
+                <!-- result是action中设置的变量名，也是页面需要返回的数据，该变量必须有setter和getter方法 -->
+                <param name="root">result</param>
+                <!-- callbackParameter是ajax回调函数中设置的变量名，也是页面需要返回的数据-->
+                <param name="callbackParameter">data</param>
+            </result>
+        </action>
+    </package>
+</struts>

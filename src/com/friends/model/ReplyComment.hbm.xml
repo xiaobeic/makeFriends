@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.friends.model">
+
+	<class name="ReplyComment" table="reply_comment">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="replyTime" type="timestamp"></property>
+		<property name="replyComment" type="text"></property>
+		<many-to-one name="comment" class="Comment" column="comment_id"></many-to-one>
+		<many-to-one name="user" class="User" column="user_id"></many-to-one>
+		<many-to-one name="replyUser" class="User" column="reply_user_id"></many-to-one>
+	</class>
+
+</hibernate-mapping>

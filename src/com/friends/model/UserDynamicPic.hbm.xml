@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.friends.model">
+
+	<class name="UserDynamicPic" table="userdynamicPic">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="pic_name" type="string"></property>
+		<set name="userDynamic" table="userDynamic_userDynamicPics">
+			<key column="UserDynamicPic_id"></key>
+			<many-to-many class="Comment"></many-to-many>
+		</set>
+	</class>
+
+</hibernate-mapping>

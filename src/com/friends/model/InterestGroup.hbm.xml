@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.friends.model">
+
+	<class name="InterestGroup" table="interestgroup">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="groupName" type="string"></property>
+		<property name="groupBg" type="string"></property>
+		<property name="groupDesc" type="string"></property>
+		<property name="applyReason" type="string"></property>
+		<property name="createdTime" type="timestamp"></property>
+		
+		<many-to-one name="interest" class="Interest" column="interest_id"></many-to-one>
+		<many-to-one name="createdUser" class="User" column="created_user_id"></many-to-one>
+		<set name="users" table="user_interestGroup" lazy="false" inverse="true">
+			<key column="interestGroup_id"></key>
+			<many-to-many class="User" column="user_id"></many-to-many>
+		</set>
+		<set name="userDynamics" lazy="false" table="userDynamics">
+			<key column="interestGroup_id"></key>
+			<one-to-many class="UserDynamic"/>
+		</set>
+	</class>
+
+</hibernate-mapping>
+        

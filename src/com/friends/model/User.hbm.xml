@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.friends.model">
+
+	<class name="User" table="user">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="userName" type="string"></property>
+		<property name="password" type="string"></property>
+		<property name="sex" type="string"></property>
+		<property name="email" type="string"></property>
+		<property name="signature" type="string"></property>
+		<property name="head_pic" type="string"></property>
+		<property name="experience" type="integer"></property>
+		<property name="level" type="string"></property>
+		<property name="nickName" type="string"></property>
+		<property name="phoneNum" type="string"></property>
+		<property name="birth" type="date"></property>
+		<property name="idCard" type="string"></property>
+		<property name="registerTime" type="date"></property>
+		<property name="userRealName" type="string"></property>
+		
+		<set name="interestGroups" order-by="interestGroup_id desc" table="user_interestGroup" inverse="false" lazy="false">
+			<key column="user_id"></key>
+			<many-to-many class="InterestGroup" column="interestGroup_id"></many-to-many>
+		</set>
+		<set name="userDynamics" order-by="id desc" lazy="false" table="userDynamics">
+			<key column="user_id"></key>
+			<one-to-many class="UserDynamic"/>
+		</set>
+		<set name="createdInterestGroups" order-by="id desc" lazy="false" table="interestgroup">
+            <key column="created_user_id"></key>
+            <one-to-many class="InterestGroup"/>
+        </set>
+	</class>
+
+</hibernate-mapping>
+        

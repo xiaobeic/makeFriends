@@ -1,0 +1,193 @@
+	/*登录注册超链接*/
+	
+	.login-a {
+		margin: 5px;
+	}
+	
+	.login-a:hover {
+		text-decoration: none;
+	}
+	
+	.forget-a {
+		color: #555;
+		margin-left: 70px;
+	}
+	
+	.forget-a:hover {
+		text-decoration: none;
+		color: #1B9AF7;
+	}
+	/*右下角流动框*/
+	
+	.fixed-btn {
+		position: fixed;
+		right: 1%;
+		bottom: 2%;
+		width: 40px;
+		border: 1px solid #eee;
+		background-color: white;
+		font-size: 25px;
+	}
+	
+	.fixed-btn a {
+		display: inline-block;
+		width: 40px;
+		height: 30px;
+		text-align: center;
+	}
+	/*兴趣目录*/
+	
+	.middle_left {
+		width: 250px;
+		float: left;
+		margin-left: 120px;
+		margin-top: 20px;
+		margin-bottom: 60px;
+		border: 1px solid #eee;
+		background-color: white;
+		-webkit-border-radius: 2%;
+	}
+	/*兴趣目录头部*/
+	
+	.middle_left_head {
+		font-size: 30px;
+		text-align: center;
+		line-height: 60px;
+		font-weight: 900;
+		-webkit-border-radius: 3%;
+		background-color: #0888E6;
+	}
+	/*兴趣目录span*/
+	
+	.middle_left span {
+		margin-left: 20px;
+		width: 100px;
+		height: 35px;
+		font-size: 15px;
+		font-weight: 900;
+		line-height: 30px;
+		float: left;
+		overflow: hidden;
+		/*超出部分隐藏*/
+	}
+	
+	.middle_left a {
+		color: #868686;
+	}
+	
+	.middle_left a:hover {
+		color: #000000;
+		font-size: 18px;
+	}
+	
+	a:hover,
+	a:link,
+	a:active {
+		text-decoration: none;
+	}
+	/*兴趣小组块*/
+	
+	.middle_right {
+		float: left;
+		background-color: #eee;
+		margin-left: 40px;
+		margin-top: 20px;
+		margin-bottom: 60px;
+	}
+	/*兴趣小组单个div*/
+	
+	.right_div {
+		position: relative;
+		width: 600px;
+		padding: 1em 1.5em;
+		margin-bottom: 20px;
+		color: #fff;
+		background: white;
+		overflow: hidden;
+		-webkit-border-radius: 2%;
+	}
+	
+	.right_div .right_h3 {
+		font-family: "微软雅黑";
+		color: #000000;
+		margin-bottom: 0;
+	}
+	
+	.right_div .right_hr {
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+	
+	.right_div .right_img {
+		width: 550px;
+	}
+	
+	.right_div .right_p {
+		margin: 10px;
+		color: #030303;
+	}
+	
+	.right_div .right_indiv {
+		float: right;
+		color: #0888E6;
+		margin-right: 20px;
+	}
+	
+	.right_div .right_span1 {
+		margin-left: 20px;
+		margin-top: 20px;
+		cursor: default;
+	}
+	
+	.right_div .right_span2 {
+		color: #D43F3A;
+	}
+	
+	.right_div .right_span3 {
+		color: #5E5E5E;
+	}
+	/*兴趣小组单个div的折叠边角*/
+	
+	.right_div:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		border-style: solid;
+		border-color: #fff #fff #658E15 #658E15;
+		background: #E0E0E0;
+		/*设置折叠边角原的背面颜色*/
+		display: block;
+		width: 0;
+		-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.2);
+		-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 0px 30px rgba(0, 0, 0, 0.3), -1px 1px 10px rgba(0, 0, 0, 0.5);
+	}
+	
+	.rounded:before {
+		border-width: 16px;
+		border-color: #eee #eee transparent transparent;
+		/*设置折叠边角原位置的颜色*/
+		-webkit-border-bottom-left-radius: 5px;
+		-moz-border-radius: 0 0 0 10px;
+		border-radius: 0 0 0 10px;
+	}
+	/*兴趣小组单个div的图片效果*/
+	
+	.right_imgdiv {
+		width: 550px;
+		overflow: hidden;
+	}
+	
+	.right_img {
+		transition: .6s;
+		-moz-transition: .6s;
+		-webkit-transition: .6s;
+		-o-transition: .6s;
+		line-height: 1em;
+	}
+	
+	.right_img:hover {
+		transform: scale(1.05);
+		-webkit-transform: scale(1.05);
+	}
